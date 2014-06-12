@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2014, Qunar OPSDEV
+# Copyright 2013, Qunar OPSDEV
 #
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -16,3 +16,12 @@
 #
 # Author: Jianing Yang <jianingy.yang@gmail.com>
 #
+
+from flask.ext.sqlalchemy import SQLAlchemy
+
+_DBAPI = SQLAlchemy(session_options={'autocommit': True})
+
+
+def get_dbapi():
+    global _DBAPI
+    return _DBAPI
