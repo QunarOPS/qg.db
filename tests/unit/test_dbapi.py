@@ -22,7 +22,7 @@ from testtools import TestCase
 import mock
 
 from qg.web.app import QFlaskApplication
-from qg.db import QDBAPIExtension
+from qg.db.app.exts import QDBAPIExtension
 
 
 CONF = cfg.CONF
@@ -54,7 +54,7 @@ class TestFlaskAppliation(TestCase):
         with mock.patch('sys.argv', ['test', '--debug']):
             app.main()
 
-        from qg.db import get_dbapi
+        from qg.db.dbapi import get_dbapi
         from flask import current_app
         dbapi = get_dbapi()
         with app.flask_app.app_context():
@@ -79,7 +79,7 @@ class TestFlaskAppliation(TestCase):
         with mock.patch('sys.argv', ['test', '--debug']):
             app.main()
 
-        from qg.db import get_dbapi
+        from qg.db.dbapi import get_dbapi
         with app.flask_app.app_context():
             get_dbapi().create_all()
 
