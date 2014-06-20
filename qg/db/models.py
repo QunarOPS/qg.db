@@ -18,11 +18,12 @@
 #
 
 from datetime import datetime
+from oslo.db.sqlalchemy import models
 from sqlalchemy.ext import declarative
 import sqlalchemy as sa
 
+
 from qg.core.timeutils import utcnow
-from qg.db.dbapi import get_dbapi
 
 
 class TableNameMixin(object):
@@ -53,6 +54,4 @@ class TimestampMixin(object):
     created_at = sa.Column(sa.DateTime, default=utcnow)
     updated_at = sa.Column(sa.DateTime, onupdate=utcnow)
 
-
-class BASE(get_dbapi().Model, JSONSeriableMixin, TableNameMixin):
-    __abstract__ = True
+ModelBase = models.ModelBase
