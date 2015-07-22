@@ -18,7 +18,7 @@
 #
 
 from datetime import datetime
-from oslo.db.sqlalchemy import models
+from oslo_db.sqlalchemy import models
 from sqlalchemy.ext import declarative
 import sqlalchemy as sa
 
