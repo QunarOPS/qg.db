@@ -16,11 +16,11 @@
 #
 # Author: Jianing Yang <jianingy.yang@gmail.com>
 #
-from oslo.config import cfg
+from oslo_config import cfg
 from testtools import TestCase
 from sqlalchemy.ext.declarative import declarative_base
 
-from oslo.db import options
+from oslo_db import options
 from qg.db import models
 from qg.db.api import get_engine, get_session
 

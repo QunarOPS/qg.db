@@ -17,8 +17,8 @@
 # Author: Jianing Yang <jianingy.yang@gmail.com>
 #
 
-from oslo.config import cfg
-from oslo.db.sqlalchemy import session as db_session
+from oslo_config import cfg
+from oslo_db.sqlalchemy import session as db_session
 
 _FACADE = None
 
